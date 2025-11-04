@@ -1,201 +1,211 @@
-# Student Management System
+# 🎓 Student Management System
 
 <div align="center">
 
-![Python](https://img.shields.io/badge/Python-3.6+-blue.svg)
-![PyQt5](https://img.shields.io/badge/PyQt5-5.15+-green.svg)
-![License](https://img.shields.io/badge/License-MIT-yellow.svg)
-![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen.svg)
+![Python Version](https://img.shields.io/badge/python-3.6%2B-blue)
+![PyQt5](https://img.shields.io/badge/GUI-PyQt5-green)
+![License](https://img.shields.io/badge/license-MIT-success)
+![Status](https://img.shields.io/badge/status-production%20ready-brightgreen)
+![Platform](https://img.shields.io/badge/platform-windows%20%7C%20linux%20%7C%20macos-lightgrey)
 
-**Sistem Manajemen Data Mahasiswa Berbasis Desktop Modern**
+**Sistem Manajemen Data Mahasiswa Modern dengan GUI PyQt5**
+
+[Fitur](#-fitur) • [Instalasi](#-instalasi) • [Penggunaan](#-penggunaan) • [Dokumentasi](#-dokumentasi) 
 
 </div>
 
 ## 📋 Daftar Isi
 
 - [Gambaran Umum](#-gambaran-umum)
-- [Arsitektur Sistem](#-arsitektur-sistem)
-- [Fitur Utama](#-fitur-utama)
-- [Instalasi & Setup](#-instalasi--setup)
-- [Panduan Penggunaan](#-panduan-penggunaan)
-- [API & Konfigurasi](#-api--konfigurasi)
-- [Troubleshooting](#-troubleshooting)
+- [Fitur](#-fitur)
+- [Instalasi](#-instalasi)
+- [Penggunaan](#-penggunaan)
+- [Dokumentasi](#-dokumentasi)
+- [Konfigurasi](#-konfigurasi)
+- [Contoh Penggunaan](#-contoh-penggunaan)
+- [FAQ](#-faq)
 
-## 🎯 Gambaran Umum
+## 🚀 Gambaran Umum
 
-Student Management System adalah solusi lengkap untuk mengelola data mahasiswa di institusi pendidikan. Aplikasi ini dibangun dengan teknologi modern untuk memberikan pengalaman pengguna yang optimal dan efisien.
+**Student Management System** adalah aplikasi desktop modern untuk mengelola data mahasiswa secara efisien. Dibangun dengan Python dan PyQt5, aplikasi ini menawarkan antarmuka yang intuitif dan fitur lengkap untuk administrasi akademik.
 
-### Target Pengguna
-- 🏫 Administrator Kampus
-- 📊 Staff Administrasi Akademik  
-- 🎓 Dosen dan Penasihat Akademik
-- 💻 Departemen IT Pendidikan
+### ✨ Highlights
 
-## 🏗 Arsitektur Sistem
+- 🎨 **GUI Modern** dengan PyQt5 dan styling profesional
+- 💾 **Penyimpanan Otomatis** data dalam format JSON
+- 🔍 **Pencarian Real-time** dengan filter advanced
+- 📊 **Dashboard Statistik** data mahasiswa
+- 📁 **Export Data** ke format JSON
+- 🛡 **Validasi Data** komprehensif
 
-### Layer Architecture
+## 🌟 Fitur
+
+### 👨‍🎓 Manajemen Mahasiswa
+- **Registrasi Mahasiswa** - Form lengkap dengan validasi
+- **Edit Data** - Update informasi mahasiswa
+- **Hapus Data** - Dengan konfirmasi keamanan
+- **View Detail** - Tampilan informasi lengkap
+
+### 🔍 Pencarian & Filter
+- **Real-time Search** - Pencarian instan berdasarkan nama/NIM
+- **Multiple Filters** - Filter berdasarkan program studi
+- **Quick Access** - Akses cepat ke data yang dicari
+
+### 💾 Manajemen Data
+- **Auto-save** - Penyimpanan otomatis setiap operasi
+- **JSON Storage** - Format data terstruktur
+- **Backup & Export** - Ekspor data untuk backup
+- **Data Validation** - Validasi input komprehensif
+
+### 🎨 Antarmuka Pengguna
+- **Modern GUI** - PyQt5 dengan material design
+- **Responsive Layout** - Adaptif berbagai ukuran layar
+- **Professional Styling** - Warna konsisten dan typography
+- **User Friendly** - Navigasi intuitif dan mudah
+
+### 📊 Laporan & Statistik
+- **Real-time Stats** - Jumlah data terupdate
+- **Data Summary** - Ringkasan informasi penting
+- **Export Ready** - Siap untuk generate laporan
+
+## 📥 Instalasi
+
+### Prerequisites
+
+- Python 3.6 atau lebih tinggi
+- pip (Python package manager)
+
+### Step-by-Step Installation
+
+1. **Clone atau Download Repository**
+   ```bash
+   git clone https://github.com/username/student-management-system.git
+   cd student-management-system
+   ```
+
+2. **Buat Virtual Environment (Recommended)**
+   ```bash
+   python -m venv student_env
+   source student_env/bin/activate  # Linux/Mac
+   student_env\Scripts\activate    # Windows
+   ```
+
+3. **Install Dependencies**
+   ```bash
+   pip install PyQt5
+   ```
+
+4. **Verifikasi Instalasi**
+   ```bash
+   python main.py
+   ```
+
+### Quick Install (Windows)
+```bash
+# Download dan ekstrak project
+python main.py
 ```
-┌─────────────────────────────────────────────┐
-│            PRESENTATION LAYER               │
-│              (PyQt5 GUI)                    │
-├─────────────────────────────────────────────┤
-│            BUSINESS LOGIC LAYER             │
-│           (Python Core Logic)               │
-├─────────────────────────────────────────────┤
-│            DATA ACCESS LAYER                │
-│           (JSON Database)                   │
-├─────────────────────────────────────────────┤
-│            CONFIGURATION LAYER              │
-│           (Settings & Config)               │
-└─────────────────────────────────────────────┘
+
+### Requirements
+```txt
+PyQt5>=5.15.0
+```
+
+## 🎮 Penggunaan
+
+### Menjalankan Aplikasi
+
+```bash
+python main.py
+```
+
+### Basic Usage
+
+1. **Menambah Mahasiswa Baru**
+   - Isi form di panel kiri
+   - Klik "Simpan Data"
+   - Data otomatis tersimpan dan muncul di daftar
+
+2. **Mencari Mahasiswa**
+   - Gunakan search bar di panel kanan
+   - Ketik nama atau NIM
+   - Hasil update real-time
+
+3. **Mengelola Data**
+   - Pilih mahasiswa dari daftar
+   - Klik "Lihat Detail" untuk informasi lengkap
+   - Klik "Hapus" untuk menghapus data
+
+### Keyboard Shortcuts
+
+| Shortcut | Action |
+|----------|--------|
+| `Ctrl + N` | Form baru |
+| `Ctrl + S` | Simpan data |
+| `Ctrl + F` | Focus search |
+| `Ctrl + E` | Export data |
+| `Ctrl + Q` | Keluar aplikasi |
+
+## 📚 Dokumentasi
+
+### Architecture Overview
+
+```
+Student Management System
+├── Presentation Layer (PyQt5 GUI)
+├── Business Logic Layer (Student Manager) 
+├── Data Access Layer (JSON Database)
+└── Configuration Layer (Settings)
 ```
 
 ### Workflow Diagram
 
 ```mermaid
 graph TD
-    A[User Input] --> B[GUI Interface]
-    B --> C[Business Logic]
-    C --> D[Data Validation]
-    D --> E[Process Data]
-    E --> F[Database Operations]
-    F --> G[Generate Response]
-    G --> H[Update GUI]
-    H --> I[Display Results]
+    A[User Input] --> B{GUI Interface}
+    B --> C[Data Validation]
+    C --> D[Process Business Logic]
+    D --> E[Database Operations]
+    E --> F[Save to JSON]
+    F --> G[Update GUI Display]
+    G --> H[Show Confirmation]
     
-    D -->|Validation Failed| J[Error Handling]
-    J --> B
+    C -->|Validation Failed| I[Show Error Message]
+    I --> A
 ```
 
 ### Komponen Utama
 
-#### 1. **Presentation Layer (GUI)**
-- **Main Window**: `StudentManagementSystem` class
-- **Form Components**: Input fields, buttons, calendar
-- **Display Components**: List widget, search functionality
-- **Dialog Components**: Message boxes, detail views
+#### Core Classes
+- **`StudentManagementSystem`** - Main application window
+- **`StudentManager`** - Business logic handler
+- **`DatabaseManager`** - Data persistence layer
 
-#### 2. **Business Logic Layer**
-- **Data Processing**: `StudentManager` class
-- **Validation Logic**: Input validation rules
-- **Search Algorithms**: Real-time search functionality
-- **Export Logic**: Data export capabilities
+#### GUI Components
+- **Form Widgets** - Input fields, combobox, calendar
+- **List Display** - QListWidget untuk menampilkan data
+- **Search Functionality** - Real-time search implementation
+- **Dialog Boxes** - Confirmation and information dialogs
 
-#### 3. **Data Access Layer**
-- **Storage**: JSON-based database
-- **CRUD Operations**: Create, Read, Update, Delete
-- **Persistence**: Automatic data saving
-- **Backup**: Export/import functionality
+---
 
-#### 4. **Configuration Layer**
-- **App Settings**: `config.py`
-- **Styling**: QSS stylesheets
-- **Constants**: Application constants
+### File Descriptions
 
-## ✨ Fitur Utama
+| File | Description |
+|------|-------------|
+| `main.py` | Entry point, menginisialisasi dan menjalankan aplikasi |
+| `student_manager.py` | Logic bisnis untuk manajemen data mahasiswa |
+| `database_handler.py` | Menangani operasi database dan penyimpanan |
+| `config.py` | Konfigurasi aplikasi, styling, dan settings |
 
-### 🎨 **Antarmuka Pengguna**
-| Fitur | Deskripsi |
-|-------|-----------|
-| Modern UI Design | Antarmuka dengan material design
-| Responsive Layout | Adaptif berbagai ukuran layar 
-| Professional Styling | CSS-like styling dengan QSS
+## ⚙️ Konfigurasi
 
-### 📊 **Manajemen Data**
-| Fitur | Deskripsi 
-|-------|-----------|
-| Student Registration | Form registrasi dengan validasi 
-| Data Persistence | Penyimpanan otomatis JSON 
-| Advanced Search | Pencarian real-time
-| Bulk Operations | Operasi multiple records 
-| Data Export | Ekspor ke format JSON
+### Customization
 
-### 🔧 **Fitur Teknis**
-| Fitur | Deskripsi |
-|-------|-----------|
-| Form Validation | Validasi input komprehensif
-| Error Handling | Penanganan error yang robust
-| Confirmation Dialogs | Dialog konfirmasi untuk operasi kritis
-| Statistics Dashboard | Dashboard statistik data 
+Edit `config.py` untuk menyesuaikan aplikasi:
 
-## 🚀 Instalasi & Setup
-
-### Prasyarat Sistem
-- **Python**: 3.6 atau lebih tinggi
-- **Memory**: Minimal 2GB RAM
-- **Storage**: 100MB free space
-- **OS**: Windows 10+, macOS 10.14+, atau Linux Ubuntu 18.04+
-
-### Langkah Instalasi
-
-#### 1. **Setup Environment**
-```bash
-# Clone atau download project
-git clone <repository-url>
-cd student_management_system
-
-# Buat virtual environment
-python -m venv venv
-
-# Aktifkan virtual environment
-# Windows:
-venv\Scripts\activate
-# Linux/macOS:
-source venv/bin/activate
-```
-
-#### 2. **Install Dependencies**
-```bash
-pip install PyQt5
-```
-
-#### 3. **Verifikasi Instalasi**
-```bash
-python main.py
-```
-
-### Struktur File Project
-```
-student_management_system/
-│
-├── 📁 src/
-│   ├── main.py                 
-│   ├── database_handler.py     
-│   └── config.py              
-│
-├── students.json              
-│
-├── LICENSE.md
-│           
-└── README.md         
-```
-
-## 📖 Panduan Penggunaan
-
-### Workflow Penggunaan
-
-#### 1. **Inisialisasi Aplikasi**
 ```python
-# Aplikasi akan otomatis:
-# - Membuat file database jika belum ada
-# - Load existing data
-# - Setup GUI components
-```
-
-#### 2. **Registrasi Mahasiswa**
-```
-Input Data → Validation → Save → Confirmation
-```
-
-#### 3. **Manajemen Data**
-```
-Search → Select → View/Edit/Delete → Confirm → Update
-```
-
-## 🔧 API & Konfigurasi
-
-### Configuration File (config.py)
-```python
+# Application Configuration
 APP_CONFIG = {
     "app_name": "Student Management System",
     "version": "2.0",
@@ -204,82 +214,94 @@ APP_CONFIG = {
     "min_window_size": (800, 600)
 }
 
+# Color Scheme Customization
 STYLE_CONFIG = {
-    "primary_color": "#4f46e5",
-    "secondary_color": "#6b7280", 
-    "background_color": "#f0f2f5",
-    "card_background": "#ffffff"
+    'primary_color': '#4f46e5',      # Warna utama
+    'secondary_color': '#6b7280',    # Warna sekunder
+    'background_color': '#f0f2f5',   # Warna background
+    'card_background': '#ffffff'     # Warna kartu
 }
 
+# Validation Rules
 VALIDATION_RULES = {
-    "name_min_length": 2,
-    "name_max_length": 100,
-    "nim_min_length": 3,
-    "nim_max_length": 20
+    'name_min_length': 2,
+    'name_max_length': 100,
+    'nim_min_length': 3,
+    'nim_max_length': 20
 }
 ```
 
-### Student Data Model
+### Theme Customization
+
 ```python
-student_schema = {
-    "id": "integer",
-    "name": "string", 
-    "nim": "string",
-    "birth_date": "string",
-    "program_study": "string",
-    "gender": "string",
-    "created_at": "datetime"
+# Dark Theme Example
+DARK_THEME = {
+    'bg_dark': '#1a1a1a',
+    'bg_light': '#2d2d2d',
+    'text_light': '#ffffff',
+    'accent': '#bb86fc'
 }
 ```
 
-## 🛠 Troubleshooting
+## 💡 Contoh Penggunaan
 
-### Common Issues & Solutions
+### Basic Data Management
 
-#### 1. **Aplikasi Tidak Buka**
-**Gejala**: Error PyQt5 tidak ditemukan
-**Solusi**:
-```bash
-pip uninstall PyQt5
-pip install PyQt5 --user
-```
-
-#### 2. **Data Tidak Tersimpan**
-**Gejala**: Perubahan data hilang setelah restart
-**Solusi**:
-- Periksa permission folder
-- Cek storage space
-- Verify file tidak read-only
-
-#### 3. **GUI Terlihat Tidak Normal**
-**Gejala**: Layout broken atau styling tidak apply
-**Solusi**:
-- Update graphics driver
-- Check DPI settings
-- Restart aplikasi
-
-### Performance Optimization
-
-#### Untuk Large Datasets
 ```python
-# Implementasi pagination untuk data besar
-def load_students_paginated(page=1, page_size=50):
-    start_idx = (page - 1) * page_size
-    return students[start_idx:start_idx + page_size]
+# Menambah mahasiswa baru
+student_data = {
+    'name': 'Ahmad Rizki',
+    'nim': '202407001',
+    'birth_date': '15/08/2000',
+    'program_study': 'Computer Science',
+    'gender': 'Male'
+}
+
+# Simpan ke database
+manager = StudentManager()
+result = manager.add_student(**student_data)
+print(f"Mahasiswa {result['name']} berhasil ditambahkan!")
 ```
 
-#### Memory Management
+### Advanced Search
+
 ```python
-# Clear unused resources
-def cleanup_resources(self):
-    self.student_list.clear()
-    gc.collect()
+# Pencarian mahasiswa
+search_results = manager.search_students('Ahmad')
+for student in search_results:
+    print(f"{student['name']} - {student['nim']}")
 ```
 
----
+### Data Export
+
+```python
+# Export data ke file
+export_result = manager.export_data('backup_2024.json')
+if export_result:
+    print("Data berhasil diexport!")
+```
+
+## ❓ FAQ
+
+### Q: Apakah data tersimpan otomatis?
+**A:** Ya! Semua data secara otomatis tersimpan ke file JSON.
+
+### Q: Bisakah import data dari Excel?
+**A:** Untuk sekarang tidak bisa.
+
+### Q: Berapa banyak data yang bisa ditangani?
+**A:** Aplikasi optimal untuk hingga 10,000 record mahasiswa.
+
+### Q: Apakah support multi-user?
+**A:** Saat ini single-user.
+
+### Q: Bagaimana backup data?
+**A:** Gunakan fitur export untuk backup manual, atau copy file `students.json`.
 
 <div align="center">
 
 **⭐ Jangan lupa beri bintang jika project ini membantu! ⭐**
+
+[Kembali ke Atas](#-student-management-system)
 
 </div>
