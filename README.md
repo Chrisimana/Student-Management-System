@@ -148,8 +148,6 @@ python main.py
 
 ## 📚 Dokumentasi
 
-### Architecture Overview
-
 ### Workflow Diagram
 
 ```mermaid
