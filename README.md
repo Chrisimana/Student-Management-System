@@ -150,14 +150,6 @@ python main.py
 
 ### Architecture Overview
 
-```
-Student Management System
-├── Presentation Layer (PyQt5 GUI)
-├── Business Logic Layer (Student Manager) 
-├── Data Access Layer (JSON Database)
-└── Configuration Layer (Settings)
-```
-
 ### Workflow Diagram
 
 ```mermaid
