@@ -6,14 +6,14 @@ import json
 import os
 from datetime import datetime
 
+# Basic student data management class
 class StudentManager:
-    """Class untuk mengelola data mahasiswa"""
     def __init__(self):
         self.data_file = "students_data.json"
         self.load_data()
     
+    # Memuat data dari file JSON
     def load_data(self):
-        """Memuat data dari file JSON"""
         if os.path.exists(self.data_file):
             try:
                 with open(self.data_file, 'r') as file:
@@ -23,13 +23,13 @@ class StudentManager:
         else:
             self.students = []
     
+    # Menyimpan data ke file JSON
     def save_data(self):
-        """Menyimpan data ke file JSON"""
         with open(self.data_file, 'w') as file:
             json.dump(self.students, file, indent=4)
     
+    # Menambah data mahasiswa baru
     def add_student(self, name, nim, birth_date):
-        """Menambah data mahasiswa baru"""
         student = {
             'id': len(self.students) + 1,
             'name': name,
@@ -41,8 +41,8 @@ class StudentManager:
         self.save_data()
         return student
     
+    # Mendapatkan semua data mahasiswa
     def get_all_students(self):
-        """Mendapatkan semua data mahasiswa"""
         return self.students
 
 class ModernStudentForm(QMainWindow):
@@ -51,8 +51,8 @@ class ModernStudentForm(QMainWindow):
         self.student_manager = StudentManager()
         self.init_ui()
         
+    # Initialize UI
     def init_ui(self):
-        """Initialize the user interface"""
         self.setWindowTitle("Student Management System")
         self.setGeometry(300, 300, 900, 700)
         self.setMinimumSize(800, 600)
@@ -78,8 +78,8 @@ class ModernStudentForm(QMainWindow):
         # Load existing data
         self.load_history()
     
+    # Set modern style
     def set_modern_style(self):
-        """Set modern styling for the application"""
         self.setStyleSheet("""
             QMainWindow {
                 background-color: #f0f2f5;
@@ -166,8 +166,8 @@ class ModernStudentForm(QMainWindow):
             }
         """)
     
+    # Buat wadah formulir
     def create_form_container(self):
-        """Create the form container"""
         container = QGroupBox("Student Registration Form")
         layout = QVBoxLayout()
         
@@ -262,8 +262,8 @@ class ModernStudentForm(QMainWindow):
         
         return container
     
+    # Buat riwayat/tampilan
     def create_history_container(self):
-        """Create the history/display container"""
         container = QGroupBox("Student Records")
         layout = QVBoxLayout()
         
@@ -318,8 +318,8 @@ class ModernStudentForm(QMainWindow):
         
         return container
     
+    # Simpan data mahasiswa
     def save_student(self):
-        """Save student data"""
         name = self.ledit_nama.text().strip()
         nim = self.ledit_nim.text().strip()
         
@@ -347,16 +347,16 @@ class ModernStudentForm(QMainWindow):
         self.clear_form()
         self.load_history()
     
+    # Bersihkan formulir
     def clear_form(self):
-        """Clear all form fields"""
         self.ledit_nama.clear()
         self.ledit_nim.clear()
         self.combo_study.setCurrentIndex(0)
         self.calender_lahir.setSelectedDate(QDate.currentDate())
         self.radio_male.setChecked(True)
     
+    # Muat riwayat mahasiswa
     def load_history(self):
-        """Load student history into list"""
         self.student_list.clear()
         students = self.student_manager.get_all_students()
         
@@ -368,8 +368,8 @@ class ModernStudentForm(QMainWindow):
         
         self.stats_label.setText(f"Total Records: {len(students)}")
     
+    # Cari mahasiswa
     def search_students(self):
-        """Search students by name or NIM"""
         search_text = self.search_edit.text().lower()
         students = self.student_manager.get_all_students()
         
@@ -382,8 +382,8 @@ class ModernStudentForm(QMainWindow):
                 item.setData(Qt.UserRole, student)
                 self.student_list.addItem(item)
     
+    # Lihat detail mahasiswa
     def view_student_details(self):
-        """View detailed student information"""
         current_item = self.student_list.currentItem()
         if not current_item:
             self.show_message("Info", "Please select a student to view details.", QMessageBox.Information)
@@ -422,8 +422,8 @@ class ModernStudentForm(QMainWindow):
         dialog.setLayout(layout)
         dialog.exec_()
     
+    # Hapus mahasiswa
     def delete_student(self):
-        """Delete selected student"""
         current_item = self.student_list.currentItem()
         if not current_item:
             self.show_message("Info", "Please select a student to delete.", QMessageBox.Information)
@@ -446,8 +446,8 @@ class ModernStudentForm(QMainWindow):
             self.load_history()
             self.show_message("Success", "Student record deleted successfully!", QMessageBox.Information)
     
+    # Ekspor data mahasiswa
     def export_data(self):
-        """Export data to file"""
         if not self.student_manager.students:
             self.show_message("Info", "No data to export.", QMessageBox.Information)
             return
@@ -467,8 +467,8 @@ class ModernStudentForm(QMainWindow):
             except Exception as e:
                 self.show_message("Error", f"Failed to export data: {str(e)}", QMessageBox.Critical)
     
+    # Tampilkan pesan sukses dengan detail mahasiswa
     def show_success_message(self, name, nim, birth_date, gender, program_study):
-        """Show success message with student details"""
         message = f"""
         <h3>Registration Successful!</h3>
         <p><b>Name:</b> {name}</p>
@@ -486,8 +486,8 @@ class ModernStudentForm(QMainWindow):
         msg_box.setIcon(QMessageBox.Information)
         msg_box.exec_()
     
+    # Tampilkan pesan umum
     def show_message(self, title, message, icon):
-        """Show generic message box"""
         msg_box = QMessageBox(self)
         msg_box.setWindowTitle(title)
         msg_box.setText(message)

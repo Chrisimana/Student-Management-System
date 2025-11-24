@@ -10,8 +10,6 @@
 
 **Sistem Manajemen Data Mahasiswa Modern dengan GUI PyQt5**
 
-[Fitur](#-fitur) • [Instalasi](#-instalasi) • [Penggunaan](#-penggunaan) • [Dokumentasi](#-dokumentasi) 
-
 </div>
 
 ## 📋 Daftar Isi
@@ -21,7 +19,6 @@
 - [Instalasi](#-instalasi)
 - [Penggunaan](#-penggunaan)
 - [Dokumentasi](#-dokumentasi)
-- [Konfigurasi](#-konfigurasi)
 - [Contoh Penggunaan](#-contoh-penggunaan)
 - [FAQ](#-faq)
 
@@ -148,22 +145,6 @@ python main.py
 
 ## 📚 Dokumentasi
 
-### Workflow Diagram
-
-```mermaid
-graph TD
-    A[User Input] --> B{GUI Interface}
-    B --> C[Data Validation]
-    C --> D[Process Business Logic]
-    D --> E[Database Operations]
-    E --> F[Save to JSON]
-    F --> G[Update GUI Display]
-    G --> H[Show Confirmation]
-    
-    C -->|Validation Failed| I[Show Error Message]
-    I --> A
-```
-
 ### Komponen Utama
 
 #### Core Classes
@@ -187,51 +168,6 @@ graph TD
 | `student_manager.py` | Logic bisnis untuk manajemen data mahasiswa |
 | `database_handler.py` | Menangani operasi database dan penyimpanan |
 | `config.py` | Konfigurasi aplikasi, styling, dan settings |
-
-## ⚙️ Konfigurasi
-
-### Customization
-
-Edit `config.py` untuk menyesuaikan aplikasi:
-
-```python
-# Application Configuration
-APP_CONFIG = {
-    "app_name": "Student Management System",
-    "version": "2.0",
-    "default_font": "Segoe UI",
-    "window_size": (900, 700),
-    "min_window_size": (800, 600)
-}
-
-# Color Scheme Customization
-STYLE_CONFIG = {
-    'primary_color': '#4f46e5',      # Warna utama
-    'secondary_color': '#6b7280',    # Warna sekunder
-    'background_color': '#f0f2f5',   # Warna background
-    'card_background': '#ffffff'     # Warna kartu
-}
-
-# Validation Rules
-VALIDATION_RULES = {
-    'name_min_length': 2,
-    'name_max_length': 100,
-    'nim_min_length': 3,
-    'nim_max_length': 20
-}
-```
-
-### Theme Customization
-
-```python
-# Dark Theme Example
-DARK_THEME = {
-    'bg_dark': '#1a1a1a',
-    'bg_light': '#2d2d2d',
-    'text_light': '#ffffff',
-    'accent': '#bb86fc'
-}
-```
 
 ## 💡 Contoh Penggunaan
 
